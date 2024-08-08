@@ -1,6 +1,11 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-blue bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'photo:list' %}">Photo App</a>
+    <a class="navbar-brand" href="{% url 'photo:list' %}"><h2>HOME</h2></a>
+    <a class="navbar-brand" href="#">
+      <img src="/static/cecil_headshot.jpg" alt="" width="150" height="150" class="d-inline-block align-text-bottom">
+        <h1> Pomona / Pitzer Colleges Track and Field/Cross Country Mosh Pit</h1>
+
+</a
     <button
       class="navbar-toggler"
       type="button"
@@ -19,16 +24,25 @@
       <ul class="navbar-nav">
         {% if user.is_authenticated %}
 
+       <li class="nav-item">
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'photo:create' %}">Add a photo</a>
-        </li>
+          <a class="nav-link active" href="{% url 'photo:create' %}">
+
+            <h2>Hi, {{user.username}}</h2>
+              <h3>Add A Photo</h3>
+
         <li class="nav-item">
-          <a class="nav-link active" href="#">Hi {{user.username}}</a>
+        <li class="nav-item">
+          <a class="nav-link inline-active" href="{% url 'user:logout' %}">
+
+              <h4>Logout</h4>
+
+          </a>
         </li>
         {% else %}
 
         <li class="nav-item">
-          <a href="{% url 'user:login' %}" class="btn btn-sm btn-danger"
+          <a href="{% url 'user:login' %}" class="btn btn-lg btn-danger"
             >Sign In</a
           >
         </li>

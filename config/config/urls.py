@@ -23,7 +23,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Main app
-    path('', include('photoapp.urls')),
+    path('', include('photoapp.urls', namespace='photo')),
+
+
     # Authentication
     path('users/', include('users.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

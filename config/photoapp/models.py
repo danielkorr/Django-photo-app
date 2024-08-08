@@ -8,9 +8,10 @@ from taggit.managers import TaggableManager
 
 class Photo(models.Model):
     
+    objects = None
     title = models.CharField(max_length=45)
     
-    description = models.CharField(max_length=250) 
+    description = models.CharField(max_length=500)
 
     created = models.DateTimeField(auto_now_add=True)
 

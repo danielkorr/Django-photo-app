@@ -17,6 +17,7 @@
   </div>
   <div class="col-md-4">
     <h4>More about this photo:</h4>
+    <h5>click on keywords below to search for related links</h5>
     <ul class="list-group list-group-horizontal-lg list-unstyled py-4">
       {% for tag in photo.tags.all %}
         <li><a href="{% url 'photo:tag' tag.slug %}" class="btn btn-sm list-group-item list-group-item-primary">{{tag.name}}</a></li>

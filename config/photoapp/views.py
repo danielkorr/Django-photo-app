@@ -66,7 +66,11 @@ class PhotoCreateView(LoginRequiredMixin, CreateView):
 class UserIsSubmitter(UserPassesTestMixin):
 
     # Custom method
-    def get_photo(self):
+    def __init__(self):
+        self.request = None
+        self.kwargs = None
+
+    def get_photo(self,):
         return get_object_or_404(Photo, pk=self.kwargs.get('pk'))
     
     def test_func(self):
